@@ -56,7 +56,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 iframe { border: 0; }
 
 *, :before, :after { box-sizing: border-box; }
-html { font-size: 1em; height: 100%; overflow-y: scroll; }
+html { font-size: 1em; min-height: 100%; overflow-y: scroll; }
 body { font-family: 'Open Sans', Verdana, Tahoma, Arial, sans-serif; line-height: 1.65; text-align: left; color: #555555; height: 100%; text-rendering: optimizeLegibility !important; /*-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;*/ }
 nav ul, nav ol, #nav ul, #navbar ul, #nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -759,13 +759,49 @@ a.social.tumblr:hover, a.social.tumblr:active { background-color: #529ECC; }
     Project Styles
 ----------------------------------------------------------------------------- */
 html {
+    min-height: 100%;
     background: #ebebeb url(../images/bg.png) repeat 0 0;
+    position: relative;
 }
 header {
     padding: 10px 0;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #56A8E3;
+    background: linear-gradient(15deg, #23A6D5, #23D5AB);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2)
+}
+.logo {
+    float: left;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Roboto Slab', 'Open Sans', 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
+    font-weight: 400 !important;
+}
+.logo:hover {
+    border: 0 !important;
+}
+nav {
+    float: right;
+    margin-top: 5px;
+}
+nav li {
+    display: inline-block;
+    margin: 0 3px;
+    vertical-align: middle;
+}
+nav li a {
+    color: #fff;
+    padding: 5px 10px;
+    border: 0 !important;
+}
+nav li a:hover {
+    color: inherit;
+    background-color: #ebebeb;
+    border-radius: 4px;
+}
+
+main {
+    padding-bottom: 20px;
 }
 .box {
     padding:  20px 30px;
@@ -777,4 +813,78 @@ header {
     padding-bottom: 10px;
     margin-bottom: .8em;
     border-bottom: 1px dotted #ccc;
+}
+.profile-image {
+    float: left;
+    border-radius: 50%;
+    margin-right: 25px;
+    margin-bottom: 5px;
+}
+.portfolio {
+    margin: 0 -15px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+.portfolio li {
+    position: relative;
+    margin: 15px;
+    padding: 0;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.portfolio li a {
+    color: #333;
+    border: 0 !important;
+}
+.portfolio li img {
+    display: block;
+    width: 100%;
+    max-width: auto;
+    transition: transform .2s; /* Animation */
+}
+.portfolio li a:hover img {
+    transform: scale(1.2);
+}
+
+.portfolio li .portfolio-title {
+    width: 100%;
+    padding: 5px;
+    position: absolute;
+    text-align: center;
+    background: rgba(255,255,255,.8);
+    bottom: 10px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    background-color: #ebebeb;
+    border-top: 1px solid #ccc;
+}
+
+@media (min-width: 48em) { /* Medium devices (tablets, 768px and up) */
+    .portfolio li {
+        position: relative;
+        margin: 15px;
+        padding: 0;
+        width: calc(50% - 30px);
+    }
+}
+@media (min-width: 62em) { /* Large devices (desktops, 992px and up) */
+    .portfolio li {
+        width: calc(33.33% - 30px);
+    }
+}
+@media (min-width: 75em) { /* Extra large devices (large desktops, 1200px and up) */
+    h1, .h1 { font-size: 2.441em; }
+    h2, .h2 { font-size: 1.953em; }
+    h3, .h3 { font-size: 1.563em; }
+    h4, .h4 { font-size: 1.25em; }
+    h5, .h5 { font-size: 1.1em; }
 }
